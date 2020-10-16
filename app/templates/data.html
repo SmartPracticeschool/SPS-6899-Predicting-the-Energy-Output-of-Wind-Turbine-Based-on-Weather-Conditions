@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Sample Form</title>
+    <style>
+        .power
+        {
+            width:300px;
+            height:25px;
+            background-color:#fffbfc;
+            border-style: ridge;
+            border-color:gray;
+            border-radius:6px;
+        }
+        body
+        {
+            font-family:sans-serif;
+        }
+        #sub
+        {
+            width:200px;
+            height:25px;
+            background-color:#9f6cff;
+            border-style: ridge;
+            border-color:gray;
+            border-radius:6px;
+        }
+    </style>
+</head>
+<body style="background-color:#615c4e">
+    <center>
+        <h1 style="color:red">Predicting the Energy Output of Wind Turbine</h1>
+        <br/>
+        <div style="background-color:#a8a883;">
+        <br/>
+        {% if result %}
+        <p style="color:red;font-size:30px;"> Predicted Power : {{result}}</p>
+        {% endif %}
+        {% if err_msg %}
+        <p style="color:red;font-size:15px;">{{err_msg}}</p>
+        {% endif %}
+        <br/>
+            <br/><br/><br/>
+        <form method="post" action="/">
+            <input type="text" name="a" class="power" placeholder="   Enter Wind Speed (m/s)" required><br/><br/><br/>
+            <input type="text" name="b" class="power" placeholder="   Enter Theoretical_Power_Curve (KWh)" required><br/><br/><br/>
+            <input type="text" name="c" class="power" placeholder="   Enter Wind Direction (°)" required><br/><br/><br/><br/>
+            <input type="submit" value="Submit" id="sub"><br/>
+            <br/><br/><br/><br/>
+        </form>
+        </div>
+    </center>
+</body>
+</html>
